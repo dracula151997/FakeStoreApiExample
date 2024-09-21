@@ -13,9 +13,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 fun ProductRoot(
 	viewModel: ProductViewModel = viewModel(),
 ) {
-	ProductScreen(
-		state = viewModel.state
-	)
+	//TODO: 1- Observe the state from the ViewModel.
+	//TODO: 2- Call ProductScreen composable with the state.
 }
 
 @Composable

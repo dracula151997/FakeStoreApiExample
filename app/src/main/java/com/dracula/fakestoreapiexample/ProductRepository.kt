@@ -1,13 +1,14 @@
 package com.dracula.fakestoreapiexample
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-
 class ProductRepository {
-	private val api = RetrofitInstance.api
+	// TODO: Initialize the Retrofit API instance
 
-	suspend fun getProducts(): List<ProductResponse> = withContext(Dispatchers.IO){
-		val response = api.getProducts()
-		response
+	// TODO: Create a suspend function to fetch products from the API
+	suspend fun getProducts(): List<ProductResponse> {
+		// TODO: Make the API call to get products
+		// TODO: Return the response
+		return emptyList()
 	}
+
+
 }
