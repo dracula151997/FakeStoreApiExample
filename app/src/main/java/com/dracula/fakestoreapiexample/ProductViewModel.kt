@@ -9,6 +9,10 @@ class ProductViewModel : ViewModel() {
 	// TODO: Create a mutable state for the product screen state
 
 	// TODO: Initialize the ViewModel by calling the getProducts function
+    init {
+
+    }
 
 	// TODO: Create a function to fetch products from the repository and then update the state
+    
 }
