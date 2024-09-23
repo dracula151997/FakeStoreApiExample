@@ -13,11 +13,15 @@ class CategoriesViewModel: ViewModel(){
     private val _state = mutableStateOf(CategoriesState())
     var state: State<CategoriesState> = _state
 
-    fun getCategories(){
+    init {
+    	getCategories()
+    }
+
+    private fun getCategories(){
         viewModelScope.launch {
             val response = repo.getCategories()
             _state.value = state.value.copy(
-                categoriesState = response
+                categories = response
             )
         }
 
