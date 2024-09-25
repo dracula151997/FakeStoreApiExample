@@ -14,8 +14,6 @@ import androidx.navigation.NavController
 import com.dracula.fakestoreapiexample.ProductScreen
 
 
-//NavGraph
-// product/{category}
 @Composable
 fun CategoriesRoot(
 	viewModel: CategoriesViewModel = viewModel(),
