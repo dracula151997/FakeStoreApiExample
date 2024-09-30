@@ -19,6 +19,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -32,9 +33,13 @@ import coil.request.ImageRequest
 
 @Composable
 fun ProductRoot(
+	categoryName: String,
 	viewModel: ProductViewModel = viewModel(),
 ) {
 	//TODO: 1- Observe the state from the ViewModel.
+	LaunchedEffect(categoryName) {
+		viewModel.getProductsForCategory(categoryName)
+	}
 	val state = viewModel.state.value
 	//TODO: 2- Call ProductScreen composable with the state.
 	ProductScreen(state = state)

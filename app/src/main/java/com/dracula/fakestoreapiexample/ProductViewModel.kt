@@ -9,24 +9,33 @@ import kotlinx.coroutines.launch
 
 class ProductViewModel : ViewModel() {
 	// TODO: Initialize the product repository
-    private val repo = ProductRepository()
+	private val repo = ProductRepository()
 
 	// TODO: Create a mutable state for the product screen state
-    private val _state = mutableStateOf(ProductScreenState())
-    var state : State<ProductScreenState> = _state
+	private val _state = mutableStateOf(ProductScreenState())
+	var state: State<ProductScreenState> = _state
 
 	// TODO: Initialize the ViewModel by calling the getProducts function
-    init {
-        getProducts()
-    }
+	init {
+		getProducts()
+	}
 
 	// TODO: Create a function to fetch products from the repository and then update the state
-    private fun getProducts(){
-        viewModelScope.launch {
-            val products = repo.getProducts()
-            _state.value =state.value.copy(
-                products = products
-            )
-        }
-    }
+	private fun getProducts() {
+		viewModelScope.launch {
+			val products = repo.getProducts()
+			_state.value = state.value.copy(
+				products = products
+			)
+		}
+	}
+
+	fun getProductsForCategory(category: String) {
+		viewModelScope.launch {
+			val products = repo.getProductsForCategory(category)
+			_state.value = state.value.copy(
+				products = products
+			)
+		}
+	}
 }

@@ -1,7 +1,6 @@
 package com.dracula.fakestoreapiexample
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,14 +27,13 @@ class MainActivity : ComponentActivity() {
 					NavHost(
 						navController = navController,
 						startDestination = CategoryScreen
-					){
+					) {
 						composable<CategoryScreen> {
 							CategoriesRoot(navController = navController)
 						}
 						composable<ProductScreen> {
 							val routeData = it.toRoute<ProductScreen>()
-							Log.d("MainActivity", "Category: ${routeData.category}")
-							ProductRoot()
+							ProductRoot(categoryName = routeData.category)
 						}
 					}
 				}

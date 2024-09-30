@@ -9,4 +9,3 @@ data class ProductScreen(
 
 @Serializable
 object CategoryScreen
-// /product_screen/category=electronics

@@ -19,6 +19,15 @@ class ProductRepository {
 		}
 	}
 
+	suspend fun getProductsForCategory(category: String): List<ProductResponse> {
+		return try {
+			val responseProducts = api.getProductsForCategory(category)
+			return responseProducts
+		} catch (e: Exception) {
+			emptyList()
+		}
+	}
+
 	suspend fun getCategories(): List<String> {
 		return try {
 			val responseCategories = api.getCategories()
